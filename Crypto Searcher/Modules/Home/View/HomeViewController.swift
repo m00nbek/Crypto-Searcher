@@ -1,5 +1,5 @@
 //
-//  RootTabBarController.swift
+//  HomeViewController.swift
 //  Crypto Searcher
 //
 //  Created by Oybek on 8/5/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RootTabBarController: UITabBarController, RootViewProtocol {
+class HomeViewController: UIViewController, HomeViewProtocol {
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -15,9 +15,10 @@ class RootTabBarController: UITabBarController, RootViewProtocol {
         configureUI()
     }
     // MARK: - Properties
-    var presenter: RootPresenterProtcol?
+    var presenter: HomePresenterProtcol?
     // MARK: - Functions
     private func configureUI() {
         view.backgroundColor = .white
     }
 }
+
