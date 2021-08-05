@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		AB15399A26BC246300ACA84A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB15399926BC246300ACA84A /* AppDelegate.swift */; };
 		AB15399C26BC246300ACA84A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB15399B26BC246300ACA84A /* SceneDelegate.swift */; };
-		AB15399E26BC246300ACA84A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB15399D26BC246300ACA84A /* ViewController.swift */; };
-		AB1539A126BC246300ACA84A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB15399F26BC246300ACA84A /* Main.storyboard */; };
 		AB1539A326BC246400ACA84A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB1539A226BC246400ACA84A /* Assets.xcassets */; };
 		AB1539A626BC246400ACA84A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB1539A426BC246400ACA84A /* LaunchScreen.storyboard */; };
+		AB1539B726BC288500ACA84A /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1539B626BC288500ACA84A /* RootTabBarController.swift */; };
+		AB1539B926BC29BC00ACA84A /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1539B826BC29BC00ACA84A /* RootRouter.swift */; };
+		AB1539BB26BC29DB00ACA84A /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1539BA26BC29DB00ACA84A /* Protocols.swift */; };
+		AB1539BD26BC2D1000ACA84A /* RootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1539BC26BC2D1000ACA84A /* RootInteractor.swift */; };
+		AB1539BF26BC2D2800ACA84A /* RootPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1539BE26BC2D2800ACA84A /* RootPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AB15399626BC246300ACA84A /* Crypto Searcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crypto Searcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB15399926BC246300ACA84A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB15399B26BC246300ACA84A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AB15399D26BC246300ACA84A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AB1539A026BC246300ACA84A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB1539A226BC246400ACA84A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB1539A526BC246400ACA84A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB1539A726BC246400ACA84A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB1539B626BC288500ACA84A /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
+		AB1539B826BC29BC00ACA84A /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		AB1539BA26BC29DB00ACA84A /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		AB1539BC26BC2D1000ACA84A /* RootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootInteractor.swift; sourceTree = "<group>"; };
+		AB1539BE26BC2D2800ACA84A /* RootPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,82 @@
 		AB15399826BC246300ACA84A /* Crypto Searcher */ = {
 			isa = PBXGroup;
 			children = (
-				AB15399926BC246300ACA84A /* AppDelegate.swift */,
-				AB15399B26BC246300ACA84A /* SceneDelegate.swift */,
-				AB15399D26BC246300ACA84A /* ViewController.swift */,
-				AB15399F26BC246300ACA84A /* Main.storyboard */,
+				AB1539AE26BC25D600ACA84A /* Modules */,
+				AB1539AD26BC25BD00ACA84A /* Supporting files */,
 				AB1539A226BC246400ACA84A /* Assets.xcassets */,
-				AB1539A426BC246400ACA84A /* LaunchScreen.storyboard */,
 				AB1539A726BC246400ACA84A /* Info.plist */,
 			);
 			path = "Crypto Searcher";
+			sourceTree = "<group>";
+		};
+		AB1539AD26BC25BD00ACA84A /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				AB15399926BC246300ACA84A /* AppDelegate.swift */,
+				AB15399B26BC246300ACA84A /* SceneDelegate.swift */,
+				AB1539A426BC246400ACA84A /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		AB1539AE26BC25D600ACA84A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				AB1539AF26BC282700ACA84A /* Root */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		AB1539AF26BC282700ACA84A /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				AB1539B426BC285100ACA84A /* View */,
+				AB1539B326BC284C00ACA84A /* Interactor */,
+				AB1539B226BC284000ACA84A /* Presenter */,
+				AB1539B126BC283900ACA84A /* Entitiy */,
+				AB1539B026BC282D00ACA84A /* Router */,
+				AB1539BA26BC29DB00ACA84A /* Protocols.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		AB1539B026BC282D00ACA84A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				AB1539B826BC29BC00ACA84A /* RootRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		AB1539B126BC283900ACA84A /* Entitiy */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entitiy;
+			sourceTree = "<group>";
+		};
+		AB1539B226BC284000ACA84A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				AB1539BE26BC2D2800ACA84A /* RootPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		AB1539B326BC284C00ACA84A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				AB1539BC26BC2D1000ACA84A /* RootInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		AB1539B426BC285100ACA84A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB1539B626BC288500ACA84A /* RootTabBarController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +199,6 @@
 			files = (
 				AB1539A626BC246400ACA84A /* LaunchScreen.storyboard in Resources */,
 				AB1539A326BC246400ACA84A /* Assets.xcassets in Resources */,
-				AB1539A126BC246300ACA84A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +209,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB15399E26BC246300ACA84A /* ViewController.swift in Sources */,
+				AB1539BD26BC2D1000ACA84A /* RootInteractor.swift in Sources */,
+				AB1539BB26BC29DB00ACA84A /* Protocols.swift in Sources */,
+				AB1539B926BC29BC00ACA84A /* RootRouter.swift in Sources */,
 				AB15399A26BC246300ACA84A /* AppDelegate.swift in Sources */,
+				AB1539B726BC288500ACA84A /* RootTabBarController.swift in Sources */,
 				AB15399C26BC246300ACA84A /* SceneDelegate.swift in Sources */,
+				AB1539BF26BC2D2800ACA84A /* RootPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AB15399F26BC246300ACA84A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AB1539A026BC246300ACA84A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AB1539A426BC246400ACA84A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
