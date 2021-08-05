@@ -26,6 +26,7 @@
 		AB1539DB26BC342C00ACA84A /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1539DA26BC342C00ACA84A /* SettingsInteractor.swift */; };
 		AB1539DD26BC344700ACA84A /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1539DC26BC344700ACA84A /* SettingsPresenter.swift */; };
 		AB1539DF26BC345C00ACA84A /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1539DE26BC345C00ACA84A /* SettingsRouter.swift */; };
+		AB1539E126BC573100ACA84A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1539E026BC573100ACA84A /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		AB1539DA26BC342C00ACA84A /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
 		AB1539DC26BC344700ACA84A /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		AB1539DE26BC345C00ACA84A /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		AB1539E026BC573100ACA84A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		AB1539AD26BC25BD00ACA84A /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				AB1539E026BC573100ACA84A /* Constants.swift */,
 				AB15399926BC246300ACA84A /* AppDelegate.swift */,
 				AB15399B26BC246300ACA84A /* SceneDelegate.swift */,
 				AB1539A426BC246400ACA84A /* LaunchScreen.storyboard */,
@@ -352,6 +355,7 @@
 				AB1539BF26BC2D2800ACA84A /* RootPresenter.swift in Sources */,
 				AB1539D726BC33DA00ACA84A /* SettingsProtocols.swift in Sources */,
 				AB1539CF26BC321100ACA84A /* HomeViewController.swift in Sources */,
+				AB1539E126BC573100ACA84A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
