@@ -8,7 +8,7 @@
 import UIKit
 
 protocol RootRouterProtocol {
-    static func createRoot() -> RootViewProtocol & UIViewController
+    static func createRoot() -> RootViewProtocol & UITabBarController
 }
 protocol RootViewProtocol {
     var presenter: RootPresenterProtcol? {get set}
