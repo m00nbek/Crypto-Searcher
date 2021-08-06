@@ -106,6 +106,18 @@ extension AddCoinViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         // store the coin
+        guard let data = UserDefaults.standard.data(forKey: Constants.userDefaultsCoinsKey) else {
+            // todo - handle error
+            print("cannot get data from UserDefaults")
+            return
+        }
+        
+        if var decodedCoins = try? JSONDecoder().decode([Coin].self, from: data) {
+            decodedCoins.append(self.coins[indexPath.row])
+            let encodedData = try? JSONEncoder().encode(decodedCoins)
+            UserDefaults.standard.set(encodedData, forKey: Constants.userDefaultsCoinsKey)
+        } else {
+            print("Cannot decodee")
+        }
     }
-    
 }

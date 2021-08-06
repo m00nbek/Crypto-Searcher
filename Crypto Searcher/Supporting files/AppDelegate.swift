@@ -14,6 +14,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let coins = [Coin]()
+        do {
+            let encodedData = try JSONEncoder().encode(coins)
+            UserDefaults.standard.register(defaults: [
+                Constants.userDefaultsCoinsKey: encodedData
+            ])
+        } catch {
+            // todo - handle error
+            print(error)
+        }
         return true
     }
 

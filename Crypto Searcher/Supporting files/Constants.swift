@@ -12,4 +12,5 @@ class Constants {
     static let resultCoinCellIdentifier = "resultCoinCell"
     static let baseUrl = "https://min-api.cryptocompare.com/data"
     static let coinUrl = "\(baseUrl)/all/coinlist?summary=true"
+    static let userDefaultsCoinsKey = "coins"
 }

@@ -15,7 +15,26 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         configureNavbar()
         configureUI()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let data = UserDefaults.standard.data(forKey: Constants.userDefaultsCoinsKey) else {
+            // todo - handle error
+            print("cannot get data from UserDefaults")
+            return
+        }
+        do {
+            let decodedCoins = try JSONDecoder().decode([Coin].self, from: data)
+            self.coins = decodedCoins
+        } catch {
+            print(error)
+        }
+    }
     // MARK: - Properties
+    private var coins = [Coin]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     var presenter: HomePresenterProtcol?
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -59,15 +78,17 @@ class HomeViewController: UIViewController, HomeViewProtocol {
 extension HomeViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // search
+//        coins = coins
     }
 }
 // MARK: - UITableViewDelegate/DataSource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return coins.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.coinCellIdentifier, for: indexPath)
+        cell.textLabel?.text = coins[indexPath.row].FullName
         return cell
     }
     
