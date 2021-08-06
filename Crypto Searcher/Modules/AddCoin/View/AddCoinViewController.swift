@@ -33,7 +33,7 @@ class AddCoinViewController: UIViewController, AddCoinViewProtocol {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.resultCoinCellIdentifier)
-        tableView.isHidden = false
+        tableView.isHidden = true
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -41,7 +41,7 @@ class AddCoinViewController: UIViewController, AddCoinViewProtocol {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20)
         label.text = "Coin not found..."
-        label.isHidden = true
+        label.isHidden = false
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -49,11 +49,10 @@ class AddCoinViewController: UIViewController, AddCoinViewProtocol {
     // MARK: - Protocol stubs
     func updateUI(with coins: [Coin]) {
         DispatchQueue.main.async {
+            self.coins = coins
             if !coins.isEmpty {
                 self.itemNotFound.isHidden = true
                 self.tableView.isHidden = false
-                
-                self.coins = coins
             } else {
                 self.itemNotFound.isHidden = false
                 self.tableView.isHidden = true
@@ -106,18 +105,6 @@ extension AddCoinViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         // store the coin
-        guard let data = UserDefaults.standard.data(forKey: Constants.userDefaultsCoinsKey) else {
-            // todo - handle error
-            print("cannot get data from UserDefaults")
-            return
-        }
-        
-        if var decodedCoins = try? JSONDecoder().decode([Coin].self, from: data) {
-            decodedCoins.append(self.coins[indexPath.row])
-            let encodedData = try? JSONEncoder().encode(decodedCoins)
-            UserDefaults.standard.set(encodedData, forKey: Constants.userDefaultsCoinsKey)
-        } else {
-            print("Cannot decodee")
-        }
+        presenter?.saveCoin(self.coins[indexPath.row])
     }
 }

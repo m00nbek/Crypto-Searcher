@@ -41,4 +41,18 @@ class AddCoinInteractor: AddCoinInteractorProtocol {
         }
         return filteredCoins
     }
+    func saveCoin(_ coin: Coin) {
+        guard let data = UserDefaults.standard.data(forKey: Constants.userDefaultsCoinsKey) else {
+            // todo - handle error
+            print("cannot get data from UserDefaults")
+            return
+        }
+        if var decodedCoins = try? JSONDecoder().decode([Coin].self, from: data) {
+            decodedCoins.append(coin)
+            let encodedData = try? JSONEncoder().encode(decodedCoins)
+            UserDefaults.standard.set(encodedData, forKey: Constants.userDefaultsCoinsKey)
+        } else {
+            print("Cannot decodee")
+        }
+    }
 }

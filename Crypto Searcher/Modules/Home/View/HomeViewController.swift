@@ -17,20 +17,12 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let data = UserDefaults.standard.data(forKey: Constants.userDefaultsCoinsKey) else {
-            // todo - handle error
-            print("cannot get data from UserDefaults")
-            return
-        }
-        do {
-            let decodedCoins = try JSONDecoder().decode([Coin].self, from: data)
-            self.coins = decodedCoins
-        } catch {
-            print(error)
+        if let coins = presenter?.loadSavedCoins() {
+            self.coins = coins
         }
     }
     // MARK: - Properties
-    private var coins = [Coin]() {
+    var coins = [Coin]() {
         didSet {
             tableView.reloadData()
         }

@@ -14,4 +14,8 @@ class HomePresenter: HomePresenterProtcol {
     func showAddCoinScreen(navigationController: UINavigationController?) {
         router?.showAddCoin(navigationController: navigationController)
     }
+    func loadSavedCoins() -> [Coin] {
+        // todo - avoid force unwrapping
+        return interactor!.loadSavedCoins()
+    }
 }

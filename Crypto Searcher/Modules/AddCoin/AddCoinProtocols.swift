@@ -13,8 +13,9 @@ protocol AddCoinViewProtocol {
 }
 protocol AddCoinInteractorProtocol {
     var presenter: AddCoinPresenterProtocol? {get set}
-    func loadCoins()
     func searchCoins(for text: String) -> [Coin]
+    func loadCoins()
+    func saveCoin(_ coin: Coin)
 }
 protocol AddCoinPresenterProtocol {
     var view: AddCoinViewProtocol? {get set}
@@ -23,6 +24,7 @@ protocol AddCoinPresenterProtocol {
 
     func searchCoins(for text: String)
     func loadCoins()
+    func saveCoin(_ coin: Coin)
 }
 protocol AddCoinRouterProtocol {
     static func createAddCoin() -> UIViewController & AddCoinViewProtocol
