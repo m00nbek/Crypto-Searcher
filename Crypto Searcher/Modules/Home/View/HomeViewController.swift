@@ -25,13 +25,13 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
-    private let addButton: UIBarButtonItem = {
+    private lazy var addButton: UIBarButtonItem = {
         let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         return button
     }()
     // MARK: - Selectors
     @objc private func addButtonTapped() {
-        
+        presenter?.showAddCoinScreen(navigationController: navigationController)
     }
     // MARK: - Functions
     private func configureUI() {

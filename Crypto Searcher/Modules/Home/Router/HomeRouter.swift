@@ -8,6 +8,10 @@
 import UIKit
 
 class HomeRouter: HomeRouterProtocol {
+    func showAddCoin(navigationController: UINavigationController?) {
+        let addCoinVC = AddCoinRouter.createAddCoin()
+        navigationController?.pushViewController(addCoinVC, animated: true)
+    }
     static func createHome() -> UIViewController & HomeViewProtocol {
         let router: HomeRouterProtocol = HomeRouter()
         var view: HomeViewProtocol & UIViewController = HomeViewController()
