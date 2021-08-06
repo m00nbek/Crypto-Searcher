@@ -11,5 +11,12 @@ class AddCoinPresenter: AddCoinPresenterProtocol {
     var view: AddCoinViewProtocol?
     var interactor: AddCoinInteractorProtocol?
     var router: AddCoinRouterProtocol?
-    
+    func searchCoins(for text: String) {
+        // todo - avoid force upwrapping
+        let resultCoins = interactor!.searchCoins(for: text)
+        view?.updateUI(with: resultCoins)
+    }
+    func loadCoins() {
+        interactor?.loadCoins()
+    }
 }

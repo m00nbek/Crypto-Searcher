@@ -32,6 +32,7 @@
 		ABB1BA5E26BCE820002D7C80 /* AddCoinInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1BA5D26BCE820002D7C80 /* AddCoinInteractor.swift */; };
 		ABB1BA6026BCE848002D7C80 /* AddCoinPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1BA5F26BCE848002D7C80 /* AddCoinPresenter.swift */; };
 		ABB1BA6226BCE866002D7C80 /* AddCoinRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1BA6126BCE866002D7C80 /* AddCoinRouter.swift */; };
+		ABB1BA6426BD0EC5002D7C80 /* CoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1BA6326BD0EC5002D7C80 /* CoinResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		ABB1BA5D26BCE820002D7C80 /* AddCoinInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoinInteractor.swift; sourceTree = "<group>"; };
 		ABB1BA5F26BCE848002D7C80 /* AddCoinPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoinPresenter.swift; sourceTree = "<group>"; };
 		ABB1BA6126BCE866002D7C80 /* AddCoinRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoinRouter.swift; sourceTree = "<group>"; };
+		ABB1BA6326BD0EC5002D7C80 /* CoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +306,7 @@
 		ABB1BA5526BCE77D002D7C80 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				ABB1BA6326BD0EC5002D7C80 /* CoinResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				ABB1BA6026BCE848002D7C80 /* AddCoinPresenter.swift in Sources */,
 				AB1539DB26BC342C00ACA84A /* SettingsInteractor.swift in Sources */,
 				AB15399C26BC246300ACA84A /* SceneDelegate.swift in Sources */,
+				ABB1BA6426BD0EC5002D7C80 /* CoinResponse.swift in Sources */,
 				ABB1BA5C26BCE7B4002D7C80 /* AddCoinViewController.swift in Sources */,
 				AB1539D926BC340700ACA84A /* SettingsViewController.swift in Sources */,
 				ABB1BA5E26BCE820002D7C80 /* AddCoinInteractor.swift in Sources */,
