@@ -25,10 +25,19 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
+    private let addButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        return button
+    }()
+    // MARK: - Selectors
+    @objc private func addButtonTapped() {
+        
+    }
     // MARK: - Functions
     private func configureUI() {
+        // style
         view.backgroundColor = .white
-        // constraints
+        // tableView constraints
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -38,6 +47,9 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         ])
     }
     private func configureNavbar() {
+        // setup plusButton
+        navigationItem.setRightBarButton(addButton, animated: true)
+        // setup searchBar
         let search = UISearchController(searchResultsController: nil)
         search.searchBar.delegate = self
         navigationItem.searchController = search
