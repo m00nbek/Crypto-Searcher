@@ -17,6 +17,7 @@ protocol HomeViewProtocol {
 protocol HomeInteractorProtocol {
     var presenter: HomePresenterProtcol? {get set}
     func loadSavedCoins() -> [Coin]
+    func searchCoin(with text: String, in coins: [Coin]) -> [Coin]
 }
 protocol HomePresenterProtcol {
     var interactor: HomeInteractorProtocol? {get set}
@@ -24,4 +25,5 @@ protocol HomePresenterProtcol {
     var router: HomeRouterProtocol? {get set}
     func showAddCoinScreen(navigationController: UINavigationController?)
     func loadSavedCoins() -> [Coin]
+    func searchCoin(with text: String, in coins: [Coin]) -> [Coin]
 }

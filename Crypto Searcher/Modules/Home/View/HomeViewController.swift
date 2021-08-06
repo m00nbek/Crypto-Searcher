@@ -72,11 +72,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
 extension HomeViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // search
-        if searchText != " " && !searchText.isEmpty {
-            coins = coins.filter { $0.FullName.contains(searchText) }
-        } else {
-            self.coins = presenter!.loadSavedCoins()
-        }
+        self.coins = presenter!.searchCoin(with: searchText, in: self.coins)
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.coins = presenter!.loadSavedCoins()

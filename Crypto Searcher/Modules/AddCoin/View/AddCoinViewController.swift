@@ -106,5 +106,6 @@ extension AddCoinViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         // store the coin
         presenter?.saveCoin(self.coins[indexPath.row])
+        
     }
 }

@@ -18,4 +18,7 @@ class HomePresenter: HomePresenterProtcol {
         // todo - avoid force unwrapping
         return interactor!.loadSavedCoins()
     }
+    func searchCoin(with text: String, in coins: [Coin]) -> [Coin] {
+        return interactor!.searchCoin(with: text, in: coins)
+    }
 }

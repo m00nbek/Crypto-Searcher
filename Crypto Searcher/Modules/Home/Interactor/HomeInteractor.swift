@@ -24,4 +24,11 @@ class HomeInteractor: HomeInteractorProtocol {
         }
         return [Coin]()
     }
+    func searchCoin(with text: String, in coins: [Coin]) -> [Coin] {
+        if text != " " && !text.isEmpty {
+            return coins.filter { $0.FullName.contains(text) }
+        } else {
+            return presenter!.loadSavedCoins()
+        }
+    }
 }

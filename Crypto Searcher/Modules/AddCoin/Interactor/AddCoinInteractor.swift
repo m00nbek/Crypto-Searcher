@@ -48,6 +48,11 @@ class AddCoinInteractor: AddCoinInteractorProtocol {
             return
         }
         if var decodedCoins = try? JSONDecoder().decode([Coin].self, from: data) {
+            for decodedCoin in decodedCoins {
+                if decodedCoin.Id == coin.Id {
+                    return
+                }
+            }
             decodedCoins.append(coin)
             let encodedData = try? JSONEncoder().encode(decodedCoins)
             UserDefaults.standard.set(encodedData, forKey: Constants.userDefaultsCoinsKey)
