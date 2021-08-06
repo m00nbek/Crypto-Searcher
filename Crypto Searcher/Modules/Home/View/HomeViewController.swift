@@ -62,15 +62,24 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         navigationItem.setRightBarButton(addButton, animated: true)
         // setup searchBar
         let search = UISearchController(searchResultsController: nil)
+        
         search.searchBar.delegate = self
         navigationItem.searchController = search
+        navigationItem.hidesSearchBarWhenScrolling = false
     }
 }
 // MARK: - UISearchBarDelegate
 extension HomeViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // search
-//        coins = coins
+        if searchText != " " && !searchText.isEmpty {
+            coins = coins.filter { $0.FullName.contains(searchText) }
+        } else {
+            self.coins = presenter!.loadSavedCoins()
+        }
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.coins = presenter!.loadSavedCoins()
     }
 }
 // MARK: - UITableViewDelegate/DataSource
