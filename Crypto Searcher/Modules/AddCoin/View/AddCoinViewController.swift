@@ -45,6 +45,11 @@ class AddCoinViewController: UIViewController, AddCoinViewProtocol {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    private let coinSavedAlert: UIAlertController = {
+        let alertController = UIAlertController(title: "Coin saved successfully!", message: "", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        return alertController
+    }()
     // MARK: - Selectors
     // MARK: - Protocol stubs
     func updateUI(with coins: [Coin]) {
@@ -106,6 +111,7 @@ extension AddCoinViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         // store the coin
         presenter?.saveCoin(self.coins[indexPath.row])
-        
+        // show alert
+        present(coinSavedAlert, animated: true)
     }
 }
