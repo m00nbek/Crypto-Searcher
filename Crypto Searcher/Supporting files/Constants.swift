@@ -9,4 +9,5 @@ import Foundation
 
 class Constants {
     static let coinCellIdentifier = "coinCell"
+    static let resultCoinCellIdentifier = "resultCoinCell"
 }
