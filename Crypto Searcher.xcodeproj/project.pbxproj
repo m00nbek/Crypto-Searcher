@@ -27,6 +27,11 @@
 		AB1539DD26BC344700ACA84A /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1539DC26BC344700ACA84A /* SettingsPresenter.swift */; };
 		AB1539DF26BC345C00ACA84A /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1539DE26BC345C00ACA84A /* SettingsRouter.swift */; };
 		AB1539E126BC573100ACA84A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1539E026BC573100ACA84A /* Constants.swift */; };
+		ABB1BA5A26BCE797002D7C80 /* AddCoinProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1BA5926BCE797002D7C80 /* AddCoinProtocols.swift */; };
+		ABB1BA5C26BCE7B4002D7C80 /* AddCoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1BA5B26BCE7B4002D7C80 /* AddCoinViewController.swift */; };
+		ABB1BA5E26BCE820002D7C80 /* AddCoinInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1BA5D26BCE820002D7C80 /* AddCoinInteractor.swift */; };
+		ABB1BA6026BCE848002D7C80 /* AddCoinPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1BA5F26BCE848002D7C80 /* AddCoinPresenter.swift */; };
+		ABB1BA6226BCE866002D7C80 /* AddCoinRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB1BA6126BCE866002D7C80 /* AddCoinRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +57,11 @@
 		AB1539DC26BC344700ACA84A /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		AB1539DE26BC345C00ACA84A /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		AB1539E026BC573100ACA84A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		ABB1BA5926BCE797002D7C80 /* AddCoinProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoinProtocols.swift; sourceTree = "<group>"; };
+		ABB1BA5B26BCE7B4002D7C80 /* AddCoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoinViewController.swift; sourceTree = "<group>"; };
+		ABB1BA5D26BCE820002D7C80 /* AddCoinInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoinInteractor.swift; sourceTree = "<group>"; };
+		ABB1BA5F26BCE848002D7C80 /* AddCoinPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoinPresenter.swift; sourceTree = "<group>"; };
+		ABB1BA6126BCE866002D7C80 /* AddCoinRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoinRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +119,7 @@
 				AB1539AF26BC282700ACA84A /* Root */,
 				AB1539C026BC310B00ACA84A /* Home */,
 				AB1539D026BC336C00ACA84A /* Settings */,
+				ABB1BA5326BCE73D002D7C80 /* AddCoin */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -269,6 +280,58 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		ABB1BA5326BCE73D002D7C80 /* AddCoin */ = {
+			isa = PBXGroup;
+			children = (
+				ABB1BA5826BCE78C002D7C80 /* View */,
+				ABB1BA5726BCE786002D7C80 /* Interactor */,
+				ABB1BA5626BCE783002D7C80 /* Presenter */,
+				ABB1BA5526BCE77D002D7C80 /* Entity */,
+				ABB1BA5426BCE75E002D7C80 /* Router */,
+				ABB1BA5926BCE797002D7C80 /* AddCoinProtocols.swift */,
+			);
+			path = AddCoin;
+			sourceTree = "<group>";
+		};
+		ABB1BA5426BCE75E002D7C80 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				ABB1BA6126BCE866002D7C80 /* AddCoinRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		ABB1BA5526BCE77D002D7C80 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		ABB1BA5626BCE783002D7C80 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				ABB1BA5F26BCE848002D7C80 /* AddCoinPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		ABB1BA5726BCE786002D7C80 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				ABB1BA5D26BCE820002D7C80 /* AddCoinInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		ABB1BA5826BCE78C002D7C80 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ABB1BA5B26BCE7B4002D7C80 /* AddCoinViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -345,17 +408,22 @@
 				AB1539DF26BC345C00ACA84A /* SettingsRouter.swift in Sources */,
 				AB1539CB26BC31DE00ACA84A /* HomePresenter.swift in Sources */,
 				AB15399A26BC246300ACA84A /* AppDelegate.swift in Sources */,
+				ABB1BA6226BCE866002D7C80 /* AddCoinRouter.swift in Sources */,
 				AB1539C726BC319200ACA84A /* HomeProtocols.swift in Sources */,
 				AB1539B726BC288500ACA84A /* RootTabBarController.swift in Sources */,
+				ABB1BA6026BCE848002D7C80 /* AddCoinPresenter.swift in Sources */,
 				AB1539DB26BC342C00ACA84A /* SettingsInteractor.swift in Sources */,
 				AB15399C26BC246300ACA84A /* SceneDelegate.swift in Sources */,
+				ABB1BA5C26BCE7B4002D7C80 /* AddCoinViewController.swift in Sources */,
 				AB1539D926BC340700ACA84A /* SettingsViewController.swift in Sources */,
+				ABB1BA5E26BCE820002D7C80 /* AddCoinInteractor.swift in Sources */,
 				AB1539DD26BC344700ACA84A /* SettingsPresenter.swift in Sources */,
 				AB1539C926BC31D300ACA84A /* HomeRouter.swift in Sources */,
 				AB1539BF26BC2D2800ACA84A /* RootPresenter.swift in Sources */,
 				AB1539D726BC33DA00ACA84A /* SettingsProtocols.swift in Sources */,
 				AB1539CF26BC321100ACA84A /* HomeViewController.swift in Sources */,
 				AB1539E126BC573100ACA84A /* Constants.swift in Sources */,
+				ABB1BA5A26BCE797002D7C80 /* AddCoinProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
