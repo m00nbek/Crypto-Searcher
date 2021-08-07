@@ -9,5 +9,4 @@ import Foundation
 
 class RootInteractor: RootInteractorProtocol {
     var presenter: RootPresenterProtcol?
-    
 }

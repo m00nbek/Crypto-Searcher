@@ -12,7 +12,7 @@ class HomeInteractor: HomeInteractorProtocol {
     func loadSavedCoins() -> [Coin] {
         guard let data = UserDefaults.standard.data(forKey: Constants.userDefaultsCoinsKey) else {
             // todo - handle error
-            print("cannot get data from UserDefaults")
+            print("Cannot get data from UserDefaults")
             return [Coin]()
         }
         do {
@@ -21,8 +21,8 @@ class HomeInteractor: HomeInteractorProtocol {
         } catch {
             // todo - handle error
             print(error)
+            return [Coin]()
         }
-        return [Coin]()
     }
     func searchCoin(with text: String, in coins: [Coin]) -> [Coin] {
         if text != " " && !text.isEmpty {

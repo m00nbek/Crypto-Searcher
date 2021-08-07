@@ -90,12 +90,12 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else if indexPath.section == 1 && indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Constants.settingsCellIdentifier, for: indexPath)
-            cell.textLabel?.text = "Email"
+            cell.textLabel?.text = "Mail"
             cell.textLabel?.textAlignment = .center
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: Constants.settingsCellIdentifier, for: indexPath)
-            cell.textLabel?.text = "Phone number"
+            cell.textLabel?.text = "Phone"
             cell.textLabel?.textAlignment = .center
             return cell
         }
@@ -112,15 +112,17 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         } else if indexPath.section == 1 && indexPath.row == 0 {
             // email
             if let url = URL(string: "mailto:\(Constants.mail)") {
-//                print(UIApplication.shared.canOpenURL(url))
-                UIApplication.shared.open(url, options: [:])
+                if UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url, options: [:])
+                }
             }
         } else {
             // phone number
             if let url = URL(string: "tel://\(Constants.phoneNumber)") {
-                UIApplication.shared.open(url, options: [:])
+                if UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url, options: [:])
+                }
             }
         }
     }
-    
 }

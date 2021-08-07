@@ -58,8 +58,8 @@ class AddCoinInteractor: AddCoinInteractorProtocol {
             UserDefaults.standard.set(encodedData, forKey: Constants.userDefaultsCoinsKey)
             return "Coin saved successfully!"
         } else {
-            print("Cannot decodee")
+            // todo - handle error
+            return "Error"
         }
-        return "Error"
     }
 }

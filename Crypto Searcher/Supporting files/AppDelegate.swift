@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Registering initial values for UserDefaultsCoins & UserDefaultsDarkModeKey
         do {
             let encodedData = try JSONEncoder().encode([Coin]())
             UserDefaults.standard.register(defaults: [

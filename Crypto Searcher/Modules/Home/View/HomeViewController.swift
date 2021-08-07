@@ -58,11 +58,10 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         ])
     }
     private func configureNavbar() {
-        // setup plusButton
+        // setup addButton
         navigationItem.setRightBarButton(addButton, animated: true)
         // setup searchBar
         let search = UISearchController(searchResultsController: nil)
-        
         search.searchBar.delegate = self
         navigationItem.searchController = search
         navigationItem.hidesSearchBarWhenScrolling = false

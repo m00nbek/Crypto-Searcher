@@ -9,9 +9,6 @@ import Foundation
 
 class RootPresenter: RootPresenterProtcol {
     var interactor: RootInteractorProtocol?
-    
     var view: RootViewProtocol?
-    
     var router: RootRouterProtocol?
-    
 }
