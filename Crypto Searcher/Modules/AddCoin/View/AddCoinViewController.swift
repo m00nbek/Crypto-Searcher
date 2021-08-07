@@ -95,6 +95,9 @@ extension AddCoinViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         presenter?.searchCoins(for: searchText)
     }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
 }
 // MARK: - UITableViewDelegate/DataSource
 extension AddCoinViewController: UITableViewDelegate, UITableViewDataSource {
