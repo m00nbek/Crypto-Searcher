@@ -11,4 +11,8 @@ class SettingsPresenter: SettingsPresenterProtcol {
     var interactor: SettingsInteractorProtocol?
     var view: SettingsViewProtocol?
     var router: SettingsRouterProtocol?
+    
+    func clearCache() {
+        interactor?.clearCache()
+    }
 }

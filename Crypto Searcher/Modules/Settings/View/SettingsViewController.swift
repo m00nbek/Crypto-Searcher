@@ -88,6 +88,16 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == 0 && indexPath.row == 0 {
+            // clear the cache
+            presenter?.clearCache()
+        } else if indexPath.section == 0 && indexPath.row == 1 {
+            // switch dark mode
+        } else if indexPath.section == 1 && indexPath.row == 0 {
+            // email
+        } else {
+            // phone number
+        }
     }
     
 }
