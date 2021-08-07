@@ -19,7 +19,7 @@ class AddCoinPresenter: AddCoinPresenterProtocol {
     func loadCoins() {
         interactor?.loadCoins()
     }
-    func saveCoin(_ coin: Coin) {
-        interactor?.saveCoin(coin)
+    func saveCoin(_ coin: Coin) -> String {
+        return interactor!.saveCoin(coin)
     }
 }

@@ -50,7 +50,6 @@ class AddCoinViewController: UIViewController, AddCoinViewProtocol {
         alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         return alertController
     }()
-    // MARK: - Selectors
     // MARK: - Protocol stubs
     func updateUI(with coins: [Coin]) {
         DispatchQueue.main.async {
@@ -109,8 +108,8 @@ extension AddCoinViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        // store the coin
-        presenter?.saveCoin(self.coins[indexPath.row])
+        // store the coin & set alert's title
+        coinSavedAlert.title = presenter?.saveCoin(self.coins[indexPath.row])
         // show alert
         present(coinSavedAlert, animated: true)
     }
