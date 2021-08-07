@@ -66,7 +66,7 @@ class AddCoinViewController: UIViewController, AddCoinViewProtocol {
     // MARK: - Functions
     private func configureUI() {
         // style
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         // searchBar constraints
         view.addSubview(searchBar)
         NSLayoutConstraint.activate([

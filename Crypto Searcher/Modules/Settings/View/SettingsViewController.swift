@@ -25,8 +25,9 @@ class SettingsViewController: UIViewController, SettingsViewProtocol {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
-    private let darkModeSwitcher: UISwitch = {
+    private lazy var darkModeSwitcher: UISwitch = {
         let switcher = UISwitch()
+        switcher.addTarget(self, action: #selector(switchDarkMode), for: .valueChanged)
         return switcher
     }()
     private lazy var clearCacheAlert: UIAlertController = {
@@ -37,9 +38,18 @@ class SettingsViewController: UIViewController, SettingsViewProtocol {
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         return alertController
     }()
+    // MARK: - Selectors
+    @objc private func switchDarkMode() {
+        let window =  UIApplication.shared.windows.first { $0.isKeyWindow }
+        if darkModeSwitcher.isOn {
+            window?.overrideUserInterfaceStyle = .dark
+        } else {
+            window?.overrideUserInterfaceStyle = .light
+        }
+    }
     // MARK: - Functions
     private func configureUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         // tableView constraints
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
@@ -101,6 +111,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             present(clearCacheAlert, animated: true)
         } else if indexPath.section == 0 && indexPath.row == 1 {
             // switch dark mode
+            darkModeSwitcher.setOn(!darkModeSwitcher.isOn, animated: true)
+            switchDarkMode()
         } else if indexPath.section == 1 && indexPath.row == 0 {
             // email
         } else {

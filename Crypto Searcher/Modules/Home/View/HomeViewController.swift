@@ -47,7 +47,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     // MARK: - Functions
     private func configureUI() {
         // style
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         // tableView constraints
         view.addSubview(tableView)
         NSLayoutConstraint.activate([

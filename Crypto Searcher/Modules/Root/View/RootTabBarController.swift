@@ -18,6 +18,6 @@ class RootTabBarController: UITabBarController, RootViewProtocol {
     var presenter: RootPresenterProtcol?
     // MARK: - Functions
     private func configureUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
     }
 }
