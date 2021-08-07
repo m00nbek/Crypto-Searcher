@@ -16,5 +16,5 @@ class Constants {
     static let userDefaultsCoinsKey = "coins"
     static let userDefaultsDarkModeKey = "darkMode"
     static let mail = "foo@bar.com"
-    static let phoneNumber = "9981234567"
+    static let phoneNumber = "+998881234567"
 }
