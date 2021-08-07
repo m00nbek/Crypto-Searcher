@@ -111,8 +111,15 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             switchDarkMode()
         } else if indexPath.section == 1 && indexPath.row == 0 {
             // email
+            if let url = URL(string: "mailto:\(Constants.mail)") {
+//                print(UIApplication.shared.canOpenURL(url))
+                UIApplication.shared.open(url, options: [:])
+            }
         } else {
             // phone number
+            if let url = URL(string: "tel://\(Constants.phoneNumber)") {
+                UIApplication.shared.open(url, options: [:])
+            }
         }
     }
     

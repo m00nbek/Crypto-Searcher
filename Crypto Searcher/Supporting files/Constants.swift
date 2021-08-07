@@ -15,4 +15,6 @@ class Constants {
     static let coinUrl = "\(baseUrl)/all/coinlist?summary=true"
     static let userDefaultsCoinsKey = "coins"
     static let userDefaultsDarkModeKey = "darkMode"
+    static let mail = "foo@bar.com"
+    static let phoneNumber = "9981234567"
 }
