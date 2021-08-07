@@ -29,6 +29,14 @@ class SettingsViewController: UIViewController, SettingsViewProtocol {
         let switcher = UISwitch()
         return switcher
     }()
+    private lazy var clearCacheAlert: UIAlertController = {
+        let alertController = UIAlertController(title: "Are you sure to delete all of the saved coins?", message: "", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { _ in
+            self.presenter?.clearCache()
+        }))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        return alertController
+    }()
     // MARK: - Functions
     private func configureUI() {
         view.backgroundColor = .white
@@ -89,8 +97,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.section == 0 && indexPath.row == 0 {
-            // clear the cache
-            presenter?.clearCache()
+            // show alert
+            present(clearCacheAlert, animated: true)
         } else if indexPath.section == 0 && indexPath.row == 1 {
             // switch dark mode
         } else if indexPath.section == 1 && indexPath.row == 0 {
