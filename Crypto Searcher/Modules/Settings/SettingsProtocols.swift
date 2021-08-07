@@ -16,10 +16,12 @@ protocol SettingsViewProtocol {
 protocol SettingsInteractorProtocol {
     var presenter: SettingsPresenterProtcol? {get set}
     func clearCache()
+    var isDarkModeOn: Bool? {get set}
 }
 protocol SettingsPresenterProtcol {
     var interactor: SettingsInteractorProtocol? {get set}
     var view: SettingsViewProtocol? {get set}
     var router: SettingsRouterProtocol? {get set}
     func clearCache()
+    var isDarkModeOn: Bool? {get set}
 }

@@ -22,6 +22,8 @@ class SettingsRouter: SettingsRouterProtocol {
         presenter.view = view
         presenter.router = router
         
+        presenter.isDarkModeOn = UserDefaults.standard.bool(forKey: Constants.userDefaultsDarkModeKey)
+        
         return view
     }
 }

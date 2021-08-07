@@ -12,6 +12,11 @@ class SettingsPresenter: SettingsPresenterProtcol {
     var view: SettingsViewProtocol?
     var router: SettingsRouterProtocol?
     
+    var isDarkModeOn: Bool? {
+        willSet {
+            interactor?.isDarkModeOn = newValue!
+        }
+    }
     func clearCache() {
         interactor?.clearCache()
     }

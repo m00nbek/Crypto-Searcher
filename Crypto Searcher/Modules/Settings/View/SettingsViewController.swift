@@ -27,6 +27,7 @@ class SettingsViewController: UIViewController, SettingsViewProtocol {
     }()
     private lazy var darkModeSwitcher: UISwitch = {
         let switcher = UISwitch()
+        switcher.isOn = presenter!.isDarkModeOn!
         switcher.addTarget(self, action: #selector(switchDarkMode), for: .valueChanged)
         return switcher
     }()
@@ -40,12 +41,7 @@ class SettingsViewController: UIViewController, SettingsViewProtocol {
     }()
     // MARK: - Selectors
     @objc private func switchDarkMode() {
-        let window =  UIApplication.shared.windows.first { $0.isKeyWindow }
-        if darkModeSwitcher.isOn {
-            window?.overrideUserInterfaceStyle = .dark
-        } else {
-            window?.overrideUserInterfaceStyle = .light
-        }
+        presenter?.isDarkModeOn = darkModeSwitcher.isOn
     }
     // MARK: - Functions
     private func configureUI() {

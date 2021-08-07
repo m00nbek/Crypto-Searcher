@@ -17,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         do {
             let encodedData = try JSONEncoder().encode([Coin]())
             UserDefaults.standard.register(defaults: [
-                Constants.userDefaultsCoinsKey: encodedData
+                Constants.userDefaultsCoinsKey: encodedData,
+                Constants.userDefaultsDarkModeKey: false
             ])
         } catch {
             // todo - handle error

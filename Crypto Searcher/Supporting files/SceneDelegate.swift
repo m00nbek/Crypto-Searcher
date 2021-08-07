@@ -20,6 +20,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = RootRouter.createRoot()
         window?.makeKeyAndVisible()
+        
+        let isOn = UserDefaults.standard.bool(forKey: Constants.userDefaultsDarkModeKey)
+        if isOn {
+            window?.overrideUserInterfaceStyle = .dark
+        } else {
+            window?.overrideUserInterfaceStyle = .light
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
