@@ -13,7 +13,6 @@ class AddCoinViewController: UIViewController, AddCoinViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        presenter?.loadCoins()
     }
     // MARK: - Properties
     var presenter: AddCoinPresenterProtocol?

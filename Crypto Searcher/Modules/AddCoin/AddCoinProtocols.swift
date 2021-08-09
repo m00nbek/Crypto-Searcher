@@ -13,8 +13,8 @@ protocol AddCoinViewProtocol {
 }
 protocol AddCoinInteractorProtocol {
     var presenter: AddCoinPresenterProtocol? {get set}
-    func searchCoins(for text: String) -> [Coin]
-    func loadCoins()
+    func searchCoins(for text: String) async -> [Coin]
+    func loadCoins() async
     func saveCoin(_ coin: Coin) -> String
 }
 protocol AddCoinPresenterProtocol {
@@ -23,7 +23,6 @@ protocol AddCoinPresenterProtocol {
     var router: AddCoinRouterProtocol? {get set}
 
     func searchCoins(for text: String)
-    func loadCoins()
     func saveCoin(_ coin: Coin) -> String
 }
 protocol AddCoinRouterProtocol {

@@ -13,11 +13,17 @@ class AddCoinPresenter: AddCoinPresenterProtocol {
     var router: AddCoinRouterProtocol?
     func searchCoins(for text: String) {
         // todo - avoid force upwrapping
-        let resultCoins = interactor!.searchCoins(for: text)
-        view?.updateUI(with: resultCoins)
+        Task.init {
+            let coins = await interactor!.searchCoins(for: text)
+            DispatchQueue.main.async {
+                self.view?.updateUI(with: coins)
+            }
+        }
     }
     func loadCoins() {
-        interactor?.loadCoins()
+        Task.init {
+            await interactor?.loadCoins()
+        }
     }
     func saveCoin(_ coin: Coin) -> String {
         return interactor!.saveCoin(coin)
