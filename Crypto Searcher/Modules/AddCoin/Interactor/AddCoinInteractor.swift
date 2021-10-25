@@ -9,7 +9,7 @@ import Foundation
 
 class AddCoinInteractor: AddCoinInteractorProtocol {
     var coins = [Coin]()
-    var presenter: AddCoinPresenterProtocol?
+    weak var presenter: AddCoinPresenterProtocol?
     
     func loadCoins() async {
         let url = URL(string: Constants.coinUrl)!

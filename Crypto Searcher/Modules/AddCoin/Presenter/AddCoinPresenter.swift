@@ -8,7 +8,7 @@
 import Foundation
 
 class AddCoinPresenter: AddCoinPresenterProtocol {
-    var view: AddCoinViewProtocol?
+    weak var view: AddCoinViewProtocol?
     var interactor: AddCoinInteractorProtocol?
     var router: AddCoinRouterProtocol?
     func searchCoins(for text: String) {

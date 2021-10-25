@@ -14,6 +14,9 @@ class AddCoinViewController: UIViewController, AddCoinViewProtocol {
         super.viewDidLoad()
         configureUI()
     }
+    deinit {
+        print("DEBUG: Deinit")
+    }
     // MARK: - Properties
     var presenter: AddCoinPresenterProtocol?
     var coins = [Coin]() {

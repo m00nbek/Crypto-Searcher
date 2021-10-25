@@ -7,17 +7,17 @@
 
 import UIKit
 
-protocol AddCoinViewProtocol {
+protocol AddCoinViewProtocol: AnyObject {
     var presenter: AddCoinPresenterProtocol? {get set}
     func updateUI(with coins: [Coin])
 }
-protocol AddCoinInteractorProtocol {
+protocol AddCoinInteractorProtocol: AnyObject {
     var presenter: AddCoinPresenterProtocol? {get set}
     func searchCoins(for text: String) async -> [Coin]
     func loadCoins() async
     func saveCoin(_ coin: Coin) -> String
 }
-protocol AddCoinPresenterProtocol {
+protocol AddCoinPresenterProtocol: AnyObject {
     var view: AddCoinViewProtocol? {get set}
     var interactor: AddCoinInteractorProtocol? {get set}
     var router: AddCoinRouterProtocol? {get set}
@@ -25,6 +25,6 @@ protocol AddCoinPresenterProtocol {
     func searchCoins(for text: String)
     func saveCoin(_ coin: Coin) -> String
 }
-protocol AddCoinRouterProtocol {
+protocol AddCoinRouterProtocol: AnyObject {
     static func createAddCoin() -> UIViewController & AddCoinViewProtocol
 }
