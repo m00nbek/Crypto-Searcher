@@ -8,9 +8,9 @@
 import UIKit
 
 class HomePresenter: HomePresenterProtcol {
-    var interactor: HomeInteractorProtocol?
-    var view: HomeViewProtocol?
-    var router: HomeRouterProtocol?
+    weak var interactor: HomeInteractorProtocol?
+    weak var view: HomeViewProtocol?
+    weak var router: HomeRouterProtocol?
     func showAddCoinScreen(navigationController: UINavigationController?) {
         router?.showAddCoin(navigationController: navigationController)
     }

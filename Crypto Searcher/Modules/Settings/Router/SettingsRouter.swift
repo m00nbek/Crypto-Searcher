@@ -10,9 +10,9 @@ import UIKit
 class SettingsRouter: SettingsRouterProtocol {
     static func createSettings() -> UIViewController & SettingsViewProtocol {
         let router: SettingsRouterProtocol = SettingsRouter()
-        var view: SettingsViewProtocol & UIViewController = SettingsViewController()
-        var presenter: SettingsPresenterProtcol = SettingsPresenter()
-        var interactor: SettingsInteractorProtocol = SettingsInteractor()
+        let view: SettingsViewProtocol & UIViewController = SettingsViewController()
+        let presenter: SettingsPresenterProtcol = SettingsPresenter()
+        let interactor: SettingsInteractorProtocol = SettingsInteractor()
         
         view.presenter = presenter
         

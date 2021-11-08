@@ -15,7 +15,7 @@ class RootTabBarController: UITabBarController, RootViewProtocol {
         configureUI()
     }
     // MARK: - Properties
-    var presenter: RootPresenterProtcol?
+    weak var presenter: RootPresenterProtcol?
     // MARK: - Functions
     private func configureUI() {
         view.backgroundColor = .systemBackground

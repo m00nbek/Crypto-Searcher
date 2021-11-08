@@ -9,8 +9,8 @@ import Foundation
 
 class AddCoinPresenter: AddCoinPresenterProtocol {
     weak var view: AddCoinViewProtocol?
-    var interactor: AddCoinInteractorProtocol?
-    var router: AddCoinRouterProtocol?
+    weak var interactor: AddCoinInteractorProtocol?
+    weak var router: AddCoinRouterProtocol?
     func searchCoins(for text: String) {
         // todo - avoid force upwrapping
         Task.init {

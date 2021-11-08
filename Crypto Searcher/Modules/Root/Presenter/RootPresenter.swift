@@ -8,7 +8,7 @@
 import Foundation
 
 class RootPresenter: RootPresenterProtcol {
-    var interactor: RootInteractorProtocol?
-    var view: RootViewProtocol?
-    var router: RootRouterProtocol?
+    weak var interactor: RootInteractorProtocol?
+    weak var view: RootViewProtocol?
+    weak var router: RootRouterProtocol?
 }

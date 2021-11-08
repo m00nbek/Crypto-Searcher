@@ -10,9 +10,9 @@ import UIKit
 class RootRouter: RootRouterProtocol {
     static func createRoot() -> UITabBarController & RootViewProtocol {
         let router: RootRouterProtocol = RootRouter()
-        var view: RootViewProtocol & UITabBarController = RootTabBarController()
-        var presenter: RootPresenterProtcol = RootPresenter()
-        var interactor: RootInteractorProtocol = RootInteractor()
+        let view: RootViewProtocol & UITabBarController = RootTabBarController()
+        let presenter: RootPresenterProtcol = RootPresenter()
+        let interactor: RootInteractorProtocol = RootInteractor()
         
         let homeVC = UINavigationController(rootViewController: HomeRouter.createHome())
         homeVC.tabBarItem.image = UIImage(systemName: "house")

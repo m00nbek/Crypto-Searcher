@@ -8,9 +8,9 @@
 import Foundation
 
 class SettingsPresenter: SettingsPresenterProtcol {
-    var interactor: SettingsInteractorProtocol?
-    var view: SettingsViewProtocol?
-    var router: SettingsRouterProtocol?
+    weak var interactor: SettingsInteractorProtocol?
+    weak var view: SettingsViewProtocol?
+    weak var router: SettingsRouterProtocol?
     
     var isDarkModeOn: Bool? {
         willSet {

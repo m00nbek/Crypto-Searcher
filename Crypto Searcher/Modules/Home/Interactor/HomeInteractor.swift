@@ -8,7 +8,7 @@
 import Foundation
 
 class HomeInteractor: HomeInteractorProtocol {
-    var presenter: HomePresenterProtcol?
+    weak var presenter: HomePresenterProtcol?
     func loadSavedCoins() -> [Coin] {
         guard let data = UserDefaults.standard.data(forKey: Constants.userDefaultsCoinsKey) else {
             // todo - handle error

@@ -8,5 +8,5 @@
 import Foundation
 
 class RootInteractor: RootInteractorProtocol {
-    var presenter: RootPresenterProtcol?
+    weak var presenter: RootPresenterProtcol?
 }

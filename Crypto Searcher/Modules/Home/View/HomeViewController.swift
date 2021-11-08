@@ -27,7 +27,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
             tableView.reloadData()
         }
     }
-    var presenter: HomePresenterProtcol?
+    weak var presenter: HomePresenterProtcol?
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.delegate = self

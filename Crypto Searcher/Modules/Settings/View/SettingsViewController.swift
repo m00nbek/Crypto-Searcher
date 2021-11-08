@@ -16,7 +16,7 @@ class SettingsViewController: UIViewController, SettingsViewProtocol {
         configureNavBar()
     }
     // MARK: - Properties
-    var presenter: SettingsPresenterProtcol?
+    weak var presenter: SettingsPresenterProtcol?
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.delegate = self

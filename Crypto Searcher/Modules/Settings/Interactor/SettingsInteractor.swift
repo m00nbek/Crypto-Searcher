@@ -8,11 +8,13 @@
 import UIKit
 
 class SettingsInteractor: SettingsInteractorProtocol {
-    var presenter: SettingsPresenterProtcol?
+    weak var presenter: SettingsPresenterProtcol?
     
     var isDarkModeOn: Bool? {
         willSet {
-            let window = UIApplication.shared.windows.first { $0.isKeyWindow }
+            let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+            let window = windowScene?.windows.first { $0.isKeyWindow }
+            
             if newValue! {
                 window?.overrideUserInterfaceStyle = .dark
             } else {

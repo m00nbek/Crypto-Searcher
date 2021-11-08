@@ -7,18 +7,18 @@
 
 import UIKit
 
-protocol SettingsRouterProtocol {
+protocol SettingsRouterProtocol: AnyObject {
     static func createSettings() -> SettingsViewProtocol & UIViewController
 }
-protocol SettingsViewProtocol {
+protocol SettingsViewProtocol: AnyObject {
     var presenter: SettingsPresenterProtcol? {get set}
 }
-protocol SettingsInteractorProtocol {
+protocol SettingsInteractorProtocol: AnyObject {
     var presenter: SettingsPresenterProtcol? {get set}
     func clearCache()
     var isDarkModeOn: Bool? {get set}
 }
-protocol SettingsPresenterProtcol {
+protocol SettingsPresenterProtcol: AnyObject {
     var interactor: SettingsInteractorProtocol? {get set}
     var view: SettingsViewProtocol? {get set}
     var router: SettingsRouterProtocol? {get set}

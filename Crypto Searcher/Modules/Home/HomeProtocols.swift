@@ -7,19 +7,19 @@
 
 import UIKit
 
-protocol HomeRouterProtocol {
+protocol HomeRouterProtocol: AnyObject {
     static func createHome() -> HomeViewProtocol & UIViewController
     func showAddCoin(navigationController: UINavigationController?) 
 }
-protocol HomeViewProtocol {
+protocol HomeViewProtocol: AnyObject {
     var presenter: HomePresenterProtcol? {get set}
 }
-protocol HomeInteractorProtocol {
+protocol HomeInteractorProtocol: AnyObject {
     var presenter: HomePresenterProtcol? {get set}
     func loadSavedCoins() -> [Coin]
     func searchCoin(with text: String, in coins: [Coin]) -> [Coin]
 }
-protocol HomePresenterProtcol {
+protocol HomePresenterProtcol: AnyObject {
     var interactor: HomeInteractorProtocol? {get set}
     var view: HomeViewProtocol? {get set}
     var router: HomeRouterProtocol? {get set}
